@@ -11,7 +11,7 @@
   	</properties>
     
     <name>fixed-mps</name>
-    <description>Easily generate fixed MPS files for LP</description>
+    <description>Easily generate fixed MPS files for LP solver</description>
     
     <licenses>
         <license>

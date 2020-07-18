@@ -55,6 +55,8 @@ public class Variable {
     	 * Used to indicate that an integer variable is
     	 * being created
     	 * 
+    	 * @return VarBuilder for an integer variable
+    	 * 
     	 * @since	1.0
     	 */
         public VarBuilder integer() {
@@ -67,6 +69,8 @@ public class Variable {
         /**
     	 * Used to indicate that a binary variable is
     	 * being created
+    	 * 
+    	 * @return binary variable
     	 * 
     	 * @since	1.0
     	 */
@@ -81,7 +85,9 @@ public class Variable {
         /**
     	 * Sets the upper bound of the variable
     	 * 
-    	 * @param	upper Value of the upper bound
+    	 * @param	upper	Value of the upper bound
+    	 * @return VarBuilder for an upper-bounded variable
+    	 * 
     	 * @since	1.0
     	 */
         public VarBuilder upperBound(double upper){
@@ -95,7 +101,9 @@ public class Variable {
         /**
     	 * Sets the lower bound of the variable
     	 * 
-    	 * @param	Value of the lower bound
+    	 * @param	lower	Value of the lower bound
+    	 * @return	VarBuilder for a lower-bounded variable
+    	 * 
     	 * @since	1.0
     	 */
         public VarBuilder lowerBound(double lower){
@@ -108,6 +116,8 @@ public class Variable {
 
         /**
     	 * Returns the Variable object created
+    	 * 
+    	 * @return	variable of a LP problem
     	 * 
     	 * @since	1.0
     	 */

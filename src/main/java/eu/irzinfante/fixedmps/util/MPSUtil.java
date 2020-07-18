@@ -31,6 +31,7 @@ public class MPSUtil {
 	/**
 	 * Creates a MPS file from a Problem
 	 *
+	 * @param	problem	The LP problem from which to generate the MPS file
 	 * @return	MPS file in a String
 	 * @since	1.0
 	 */

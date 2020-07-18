@@ -2,7 +2,7 @@ package eu.irzinfante.fixedmps.core;
 
 import java.util.ArrayList;
 import java.util.List;
-import eu.irzinfante.fixedmps.core.Constrain.ConstrainBuilder;
+import eu.irzinfante.fixedmps.core.Constraint.ConstraintBuilder;
 
 /**
  * @author      irzinfante contacto@irzinfante.eu
@@ -12,7 +12,7 @@ import eu.irzinfante.fixedmps.core.Constrain.ConstrainBuilder;
 public class Problem {
 
 	private Variable columns[];
-	private Constrain rows[];
+	private Constraint rows[];
 	
 	/**
 	 * @author      irzinfante contacto@irzinfante.eu
@@ -22,7 +22,7 @@ public class Problem {
 	public static class ProblemBuilder {
 		
 		private Variable columns[];
-		private List<Constrain> rows;
+		private List<Constraint> rows;
 		private int numVar;
 		
 		/**
@@ -40,26 +40,29 @@ public class Problem {
 		}
 		
 		/**
-    	 * Adds a constrain to the problem
+    	 * Adds a constraint to the problem
+    	 *
+    	 * @param	constraint	Constraint to add to the problem
+    	 * @return	ProblemBuilder with the added constraint
     	 * 
     	 * @since	1.0
     	 */
-		public ProblemBuilder addConstrain(Constrain constrain) {
+		public ProblemBuilder addConstraint(Constraint constraint) {
 			
 			double coeffs[] = new double[numVar];
-			for(int i = 0; i < Math.min(numVar, constrain.getCoeffs().length); i++) {
-				coeffs[i] = constrain.getCoeffs()[i];
+			for(int i = 0; i < Math.min(numVar, constraint.getCoeffs().length); i++) {
+				coeffs[i] = constraint.getCoeffs()[i];
 			}
 			
-			switch (constrain.getType()) {
+			switch (constraint.getType()) {
 			case 'E':
-				rows.add(new ConstrainBuilder(coeffs).equalTo(constrain.getFree()));
+				rows.add(new ConstraintBuilder(coeffs).equalTo(constraint.getFree()));
 				break;
 			case 'L':
-				rows.add(new ConstrainBuilder(coeffs).lessThan(constrain.getFree()));
+				rows.add(new ConstraintBuilder(coeffs).lessThan(constraint.getFree()));
 				break;
 			case 'G':
-				rows.add(new ConstrainBuilder(coeffs).greaterThan(constrain.getFree()));
+				rows.add(new ConstraintBuilder(coeffs).greaterThan(constraint.getFree()));
 				break;
 			}
 			
@@ -67,7 +70,9 @@ public class Problem {
 		}
 		
 		/**
-    	 * Returns the Problem object created
+    	 * Returns the created Problem object
+    	 * 
+    	 * @return	LP problem
     	 * 
     	 * @since	1.0
     	 */
@@ -75,7 +80,7 @@ public class Problem {
 
             Problem lp = new Problem();
             
-            Constrain rows[] = new Constrain[this.rows.size()];
+            Constraint rows[] = new Constraint[this.rows.size()];
             for(int i = 0; i < this.rows.size(); i++) {
             	rows[i] = this.rows.get(i);
             } 
@@ -99,11 +104,11 @@ public class Problem {
 		this.columns = columns;
 	}
 
-	public Constrain[] getRows() {
+	public Constraint[] getRows() {
 		return rows;
 	}
 
-	private void setRows(Constrain rows[]) {
+	private void setRows(Constraint rows[]) {
 		this.rows = rows;
 	}
 }

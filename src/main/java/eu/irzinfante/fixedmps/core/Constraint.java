@@ -5,7 +5,7 @@ package eu.irzinfante.fixedmps.core;
  * @version     1.0
  * @since       1.0
  */
-public class Constrain {
+public class Constraint {
 	
 	private double coeffs[];
 	private char type;
@@ -16,12 +16,12 @@ public class Constrain {
 	 * @version     1.0
 	 * @since       1.0
 	 */
-	public static class ConstrainBuilder {
+	public static class ConstraintBuilder {
 		
 		private double coeffs[];
 		
 		/**
-    	 * Initializes a Constrain object builder
+    	 * Initializes a Constraint object builder
     	 *
     	 * @param	coeffs Coefficients of the variables in the
     	 * same order they are added to the Problem object builder.
@@ -31,68 +31,71 @@ public class Constrain {
     	 * 
     	 * @since	1.0
     	 */
-		public ConstrainBuilder (double ... coeffs) {
+		public ConstraintBuilder (double ... coeffs) {
 			
 			this.coeffs = coeffs;
 		}
 		
 		/**
-    	 * Creates an inequation constrain (≥ k)
+    	 * Creates an inequation constraint (≤ k)
     	 *
-    	 * @param	free The free term of the inequation, k
+    	 * @param	free	The free term of the inequation, k
+    	 * @return	a less-than type constraint
     	 * 
     	 * @since	1.0
     	 */
-		public Constrain lessThan(double free) {
+		public Constraint lessThan(double free) {
 			
-			Constrain constrain = new Constrain();
+			Constraint constraint = new Constraint();
 			
-			constrain.setCoeffs(this.coeffs);
-			constrain.setType('L');
-			constrain.setFree(free);
+			constraint.setCoeffs(this.coeffs);
+			constraint.setType('L');
+			constraint.setFree(free);
 			
-			return constrain;
+			return constraint;
 		}
 		
 		/**
-    	 * Creates an inequation constrain (≤ k)
+    	 * Creates an inequation constraint (≥ k)
     	 *
     	 * @param	free The free term of the inequation, k
+    	 * @return	a greater-than type constraint
     	 * 
     	 * @since	1.0
     	 */
-		public Constrain greaterThan(double free) {
+		public Constraint greaterThan(double free) {
 			
-			Constrain constrain = new Constrain();
+			Constraint constraint = new Constraint();
 			
-			constrain.setCoeffs(this.coeffs);
-			constrain.setType('G');
-			constrain.setFree(free);
+			constraint.setCoeffs(this.coeffs);
+			constraint.setType('G');
+			constraint.setFree(free);
 			
-			return constrain;
+			return constraint;
 		}
 		
 		/**
-    	 * Creates a equation constrain
+    	 * Creates a equation constraint
     	 *
     	 * @param	free The free term of the equation
+    	 * @return	a equality type constraint
     	 * 
     	 * @since	1.0
     	 */
-		public Constrain equalTo(double free) {
+		public Constraint equalTo(double free) {
 			
-			Constrain constrain = new Constrain();
+			Constraint constraint = new Constraint();
 			
-			constrain.setCoeffs(this.coeffs);
-			constrain.setType('E');
-			constrain.setFree(free);
+			constraint.setCoeffs(this.coeffs);
+			constraint.setType('E');
+			constraint.setFree(free);
 			
-			return constrain;
+			return constraint;
 		}
 		
 	}
 	
-	private Constrain() {
+	private Constraint() {
 	}
 
 	public double[] getCoeffs() {

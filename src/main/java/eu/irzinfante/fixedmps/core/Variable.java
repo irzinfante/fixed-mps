@@ -1,7 +1,7 @@
 package eu.irzinfante.fixedmps.core;
 
 /**
- * @author      irzinfante <contacto@irzinfante.eu>
+ * @author      irzinfante contacto@irzinfante.eu
  * @version     1.0
  * @since       1.0
  */
@@ -13,7 +13,7 @@ public class Variable {
     private double lowerBound;
 
     /**
-     * @author      irzinfante <contacto@irzinfante.eu>
+     * @author      irzinfante contacto@irzinfante.eu
      * @version     1.0
      * @since       1.0
      */

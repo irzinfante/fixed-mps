@@ -6,7 +6,7 @@ import java.util.Map;
 import eu.irzinfante.fixedmps.core.Problem;
 
 /**
- * @author      irzinfante <contacto@irzinfante.eu>
+ * @author      irzinfante contacto@irzinfante.eu
  * @version     1.0
  * @since       1.0
  */

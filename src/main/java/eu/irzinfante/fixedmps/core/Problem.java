@@ -5,7 +5,7 @@ import java.util.List;
 import eu.irzinfante.fixedmps.core.Constrain.ConstrainBuilder;
 
 /**
- * @author      irzinfante <contacto@irzinfante.eu>
+ * @author      irzinfante contacto@irzinfante.eu
  * @version     1.0
  * @since       1.0
  */
@@ -15,7 +15,7 @@ public class Problem {
 	private Constrain rows[];
 	
 	/**
-	 * @author      irzinfante <contacto@irzinfante.eu>
+	 * @author      irzinfante contacto@irzinfante.eu
 	 * @version     1.0
 	 * @since       1.0
 	 */

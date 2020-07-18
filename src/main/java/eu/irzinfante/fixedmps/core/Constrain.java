@@ -1,7 +1,7 @@
 package eu.irzinfante.fixedmps.core;
 
 /**
- * @author      irzinfante <contacto@irzinfante.eu>
+ * @author      irzinfante contacto@irzinfante.eu
  * @version     1.0
  * @since       1.0
  */
@@ -12,7 +12,7 @@ public class Constrain {
 	private double free;
 	
 	/**
-	 * @author      irzinfante <contacto@irzinfante.eu>
+	 * @author      irzinfante contacto@irzinfante.eu
 	 * @version     1.0
 	 * @since       1.0
 	 */

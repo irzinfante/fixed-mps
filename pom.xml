@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>eu.irzinfante</groupId>
     <artifactId>fixed-mps</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.2</version>
     <packaging>jar</packaging>
     
     <properties>
@@ -145,6 +145,6 @@
 		<connection>scm:git:git@github.com:irzinfante/fixed-mps.git</connection>
 		<url>scm:git:git@github.com:irzinfante/fixed-mps.git</url>
 		<developerConnection>scm:git:git@github.com:irzinfante/fixed-mps.git</developerConnection>
-		<tag>fixed-mps-0.1</tag>
+		<tag>fixed-mps-0.2</tag>
 	</scm>
 </project>

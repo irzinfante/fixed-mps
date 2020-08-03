@@ -93,8 +93,11 @@ public class MPSUtil {
 		for(int x = 0; x < problem.getColumns().length; x++) {
 			if(problem.getColumns()[x].getLowerBound() != 0)
 				MPS += String.format(" %-2.2s %-8.8s  %-8.8s  %+.5e%n", "LO", BND1, String.format("X%07d", x+1), bound(problem.getColumns()[x].getLowerBound()));
-			if(problem.getColumns()[x].getUpperBound() < Double.MAX_VALUE)
+			if((problem.getColumns()[x].isInteger() && problem.getColumns()[x].getUpperBound() != 1)
+					|| (!problem.getColumns()[x].isInteger() && problem.getColumns()[x].getUpperBound() < Double.MAX_VALUE)) {
+				
 				MPS += String.format(" %-2.2s %-8.8s  %-8.8s  %+.5e%n", "UP", BND1, String.format("X%07d", x+1), bound(problem.getColumns()[x].getUpperBound()));
+			}
 		}
 		
 		MPS += String.format("%-14.14s", ENDATA);

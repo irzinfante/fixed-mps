@@ -1,7 +1,7 @@
 # Usage of the library
 Let's put it simple. Having the following linear programming (LP) problem,
 
-<img src="https://latex.codecogs.com/gif.latex?\newline%20min%20\;%20Z%20=%20-4X_1%20+%202X_2%20-%207X_3%20+%20X_4%20\newline%20\;%20X_1%20+%205X_3%20+%207X_4%20\le%2010%20\newline%20X_1%20+%20X_2%20-%20X_3%20\le%201%20\newline%20X_1%20+%202X_2%20+%202X_4%20\le%2010%20\newline%20X_1,%20X_2,%20X_3,%20X_4%20\in%20\{0,%201\}">
+<img src="https://latex.codecogs.com/gif.latex?\newline%20min%20\;%20Z%20=%20-X_1%20-%20X_2\newline%20\;%20-2X_1%20+%202X_2%20\ge%201\newline%20-8X_1%20+%2010X_2\le%2013\newline%20X_1,%20X_2%20\ge%200,\;%20X_1,%20X_2%20\in%20\mathbb{Z}">
 
 our goal is to generate, in the most simple and intuitive way, a fixed-format MPS file representing the problem.
 
@@ -15,15 +15,12 @@ import eu.irzinfante.fixedmps.core.Constraint.ConstraintBuilder;
 
 Problem lp = new ProblemBuilder(
 
-	new VarBuilder(-4).binary(),
-	new VarBuilder(2).binary(),
-	new VarBuilder(-7).binary(),
-	new VarBuilder(1).binary()
+	new VarBuilder(-1).lowerBound(0).upperBound(Double.MAX_VALUE).integer().build(),
+	new VarBuilder(-1).lowerBound(0).upperBound(Double.MAX_VALUE).integer().build()
 	
 )
-.addConstraint(new ConstraintBuilder( 1, 0, 5, 7).lessThan(10))
-.addConstraint(new ConstraintBuilder( 1, 1,-1, 0).lessThan(1))
-.addConstraint(new ConstraintBuilder( 1, 2, 0, 2).lessThan(3))
+.addConstraint(new ConstraintBuilder(-2,  2).greaterThan(1))
+.addConstraint(new ConstraintBuilder(-8, 10).lessThan(13))
 .build();
 ```
 
@@ -42,28 +39,20 @@ The result in this case would be:
 NAME          FIXEDMPS
 ROWS          
  N  OBJ     
- L  C0000001
+ G  C0000001
  L  C0000002
- L  C0000003
 COLUMNS       
     INT1      'MARKER'                 'INTORG'
-    X0000001  C0000002  +1.00000e+00   C0000001  +1.00000e+00
-    X0000001  OBJ       -4.00000e+00   C0000003  +1.00000e+00
-    X0000002  C0000002  +1.00000e+00   OBJ       +2.00000e+00
-    X0000002  C0000003  +2.00000e+00
-    X0000003  C0000002  -1.00000e+00   C0000001  +5.00000e+00
-    X0000003  OBJ       -7.00000e+00
-    X0000004  C0000001  +7.00000e+00   OBJ       +1.00000e+00
-    X0000004  C0000003  +2.00000e+00
+    X0000001  C0000002  -8.00000e+00   C0000001  -2.00000e+00
+    X0000001  OBJ       -1.00000e+00
+    X0000002  C0000002  +1.00000e+01   C0000001  +2.00000e+00
+    X0000002  OBJ       -1.00000e+00
     INT1END   'MARKER'                 'INTEND'
 RHS           
-    RHS1      C0000001  +1.00000e+01
-    RHS1      C0000002  +1.00000e+00
-    RHS1      C0000003  +3.00000e+00
+    RHS1      C0000001  +1.00000e+00
+    RHS1      C0000002  +1.30000e+01
 BOUNDS        
- UP BND1      X0000001  +1.00000e+00
- UP BND1      X0000002  +1.00000e+00
- UP BND1      X0000003  +1.00000e+00
- UP BND1      X0000004  +1.00000e+00
+ UP BND1      X0000001  +1.00000e+10
+ UP BND1      X0000002  +1.00000e+10
 ENDATA
 ```

@@ -1,4 +1,6 @@
-# Usage of the library*
+
+###### Note: Use always the latest version of the library.
+# Usage of the library
 Let's put it simple. Having the following linear programming (LP) problem,
 
 <img src="https://latex.codecogs.com/gif.latex?\newline%20min%20\;%20Z%20=%20-X_1%20-%20X_2\newline%20\;%20-2X_1%20+%202X_2%20\ge%201\newline%20-8X_1%20+%2010X_2\le%2013\newline%20X_1,%20X_2%20\ge%200,\;%20X_1,%20X_2%20\in%20\mathbb{Z}">
@@ -56,4 +58,3 @@ BOUNDS
  UP BND1      X0000002  +1.00000e+10
 ENDATA
 ```
-###### *Note: Use always the latest version of the library.

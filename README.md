@@ -19,7 +19,11 @@ Problem lp = new ProblemBuilder(
 
 	new VarBuilder(-1).lowerBound(0).upperBound(Double.MAX_VALUE).integer().build(),
 	new VarBuilder(-1).lowerBound(0).upperBound(Double.MAX_VALUE).integer().build()
+<<<<<<< HEAD
+
+=======
 	
+>>>>>>> c0579bfc2c7c8bc06c28b610479e9bbba6285b24
 )
 .addConstraint(new ConstraintBuilder(-2,  2).greaterThan(1))
 .addConstraint(new ConstraintBuilder(-8, 10).lessThan(13))
@@ -39,21 +43,36 @@ MPSUtil.obtainMPSfile(lp)
 The result in this case would be:
 ```fortran
 NAME          FIXEDMPS
+<<<<<<< HEAD
+ROWS
+ N  OBJ
+ G  C0000001
+ L  C0000002
+COLUMNS
+=======
 ROWS          
  N  OBJ     
  G  C0000001
  L  C0000002
 COLUMNS       
+>>>>>>> c0579bfc2c7c8bc06c28b610479e9bbba6285b24
     INT1      'MARKER'                 'INTORG'
     X0000001  C0000002  -8.00000e+00   C0000001  -2.00000e+00
     X0000001  OBJ       -1.00000e+00
     X0000002  C0000002  +1.00000e+01   C0000001  +2.00000e+00
     X0000002  OBJ       -1.00000e+00
     INT1END   'MARKER'                 'INTEND'
+<<<<<<< HEAD
+RHS
+    RHS1      C0000001  +1.00000e+00
+    RHS1      C0000002  +1.30000e+01
+BOUNDS
+=======
 RHS           
     RHS1      C0000001  +1.00000e+00
     RHS1      C0000002  +1.30000e+01
 BOUNDS        
+>>>>>>> c0579bfc2c7c8bc06c28b610479e9bbba6285b24
  UP BND1      X0000001  +1.00000e+10
  UP BND1      X0000002  +1.00000e+10
 ENDATA

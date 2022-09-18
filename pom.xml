@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>eu.irzinfante</groupId>
     <artifactId>fixed-mps</artifactId>
-    <version>0.5</version>
+    <version>0.6</version>
     <packaging>jar</packaging>
     
     <properties>
@@ -72,6 +72,19 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.9.1</version>
 				<executions>
@@ -96,5 +109,11 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<scm>
+		<connection>scm:git:git@github.com:irzinfante/fixed-mps.git</connection>
+		<url>scm:git:git@github.com:irzinfante/fixed-mps.git</url>
+		<developerConnection>scm:git:git@github.com:irzinfante/fixed-mps.git</developerConnection>
+	</scm>
 
 </project>

@@ -7,8 +7,8 @@ import eu.irzinfante.fixedmps.core.Problem;
 
 /**
  * @author      irzinfante contacto@irzinfante.eu
- * @version     1.0
- * @since       1.0
+ * @version     1.0.0
+ * @since       1.0.0
  */
 public class MPSUtil {
 	
@@ -24,7 +24,7 @@ public class MPSUtil {
 	private static final String RHS = "RHS";
 	private static final String BOUNDS = "BOUNDS";
 	private static final String ENDATA = "ENDATA";
-
+	
 	private MPSUtil() {
 	}
 	
@@ -33,7 +33,7 @@ public class MPSUtil {
 	 *
 	 * @param	problem	The LP problem from which to generate the MPS file
 	 * @return	MPS file in a String
-	 * @since	1.0
+	 * @since	1.0.0
 	 */
 	public static String obtainMPSfile(Problem problem) {
 			
@@ -56,12 +56,14 @@ public class MPSUtil {
 			var = String.format("X%07d", x+1);
 			map = new HashMap<String, Double>();
 			
-			if(problem.getColumns()[x].getObjCoeff() != 0)
+			if(problem.getColumns()[x].getObjCoeff() != 0) {
 				map.put(COST, bound(problem.getColumns()[x].getObjCoeff()));
+			}
 			
 			for(int c = 0; c < problem.getRows().length; c++) {
-				if(problem.getRows()[c].getCoeffs()[x] != 0)
+				if(problem.getRows()[c].getCoeffs()[x] != 0) {
 					map.put(String.format("C%07d", c+1), bound(problem.getRows()[c].getCoeffs()[x]));
+				}
 			}
 			
 			boolean odd = true;
@@ -91,10 +93,11 @@ public class MPSUtil {
 		
 		MPS += String.format("%-14.14s%n", BOUNDS);
 		for(int x = 0; x < problem.getColumns().length; x++) {
-			if(problem.getColumns()[x].getLowerBound() != 0)
+			if(problem.getColumns()[x].getLowerBound() != 0) {
 				MPS += String.format(" %-2.2s %-8.8s  %-8.8s  %+.5e%n", "LO", BND1, String.format("X%07d", x+1), bound(problem.getColumns()[x].getLowerBound()));
+			}
 			if((problem.getColumns()[x].isInteger() && problem.getColumns()[x].getUpperBound() != 1)
-					|| (!problem.getColumns()[x].isInteger() && problem.getColumns()[x].getUpperBound() < Double.MAX_VALUE)) {
+				||	(!problem.getColumns()[x].isInteger() && problem.getColumns()[x].getUpperBound() < Double.MAX_VALUE)) {
 				
 				MPS += String.format(" %-2.2s %-8.8s  %-8.8s  %+.5e%n", "UP", BND1, String.format("X%07d", x+1), bound(problem.getColumns()[x].getUpperBound()));
 			}

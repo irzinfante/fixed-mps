@@ -1,5 +1,3 @@
-###### Note: Use always the latest version of the library.
-
 # Usage of the library
 Let's put it simple. Having the following linear programming (LP) problem,
 
@@ -7,7 +5,18 @@ Let's put it simple. Having the following linear programming (LP) problem,
 
 our goal is to generate, in the most simple and intuitive way, a fixed-format MPS file representing the problem.
 
-Using the ``fixed-mps`` library the instruction for building the LP problem is the following:
+We import the ``fixed-mps`` library from Maven with
+
+```xml
+<!-- https://mvnrepository.com/artifact/eu.irzinfante/fixed-mps -->
+<dependency>
+    <groupId>eu.irzinfante</groupId>
+    <artifactId>fixed-mps</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+Now, the instruction for building the LP problem is the following:
 
 ```java
 import eu.irzinfante.fixedmps.core.Problem;

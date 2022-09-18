@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>eu.irzinfante</groupId>
-    <artifactId>fixed-mps</artifactId>
-    <version>1.0.0</version>
-    <packaging>jar</packaging>
-    
-    <properties>
-    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    	<skipTests>true</skipTests>
-  	</properties>
-    
-    <name>fixed-mps</name>
-    <description>Easily generate fixed MPS files for LP solver</description>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>eu.irzinfante</groupId>
+	<artifactId>fixed-mps</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<skipTests>true</skipTests>
+	</properties>
+	
+	<name>fixed-mps</name>
+	<description>Easily generate fixed MPS files for LP solver</description>
 	<url>https://github.com/irzinfante/fixed-mps</url>
 	<inceptionYear>2020</inceptionYear>
-    
-    <developers>
+	
+	<developers>
 		<developer>
 			<id>irzinfante</id>
 			<name>Iker Ruiz de Infante Gonzalez</name>
@@ -27,15 +27,15 @@
 			</roles>
 		</developer>
 	</developers>
-    
-    <licenses>
-        <license>
+	
+	<licenses>
+		<license>
 			<name>GNU General Public License (GPL) version 3.0</name>
 			<url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
-	    </license>
-    </licenses>
-    
-    <distributionManagement>
+		</license>
+	</licenses>
+	
+	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
 			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
@@ -46,8 +46,8 @@
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 	</distributionManagement>
-    
-    <build>
+	
+	<build>
 		<plugins>
 			<plugin>
 				<artifactId>maven-deploy-plugin</artifactId>
@@ -153,4 +153,5 @@
 		<url>scm:git:git@github.com:irzinfante/fixed-mps.git</url>
 		<developerConnection>scm:git:git@github.com:irzinfante/fixed-mps.git</developerConnection>
 	</scm>
+	
 </project>

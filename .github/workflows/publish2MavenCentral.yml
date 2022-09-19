@@ -20,7 +20,8 @@ jobs:
         run: |
           cat <(echo -e "${{ secrets.GPG_SIGNING_KEY }}") | gpg --batch --import
       - name: Publish package
-        run: mvn --batch-mode \
+        run: |
+          mvn --batch-mode \
           -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }} \
           -DstagingProgressTimeoutMinutes=20 \
           deploy

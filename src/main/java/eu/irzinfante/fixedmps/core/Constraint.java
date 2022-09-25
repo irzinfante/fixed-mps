@@ -1,19 +1,21 @@
 package eu.irzinfante.fixedmps.core;
 
+import eu.irzinfante.fixedmps.constant.ConstraintType;
+
 /**
  * @author      irzinfante contacto@irzinfante.eu
- * @version     1.0.0
+ * @version     1.1.0
  * @since       1.0.0
  */
 public class Constraint {
 	
 	private double coeffs[];
-	private char type;
+	private ConstraintType type;
 	private double free;
 	
 	/**
 	 * @author      irzinfante contacto@irzinfante.eu
-	 * @version     1.0.0
+	 * @version     1.1.0
 	 * @since       1.0.0
 	 */
 	public static class ConstraintBuilder {
@@ -41,6 +43,7 @@ public class Constraint {
 		 * @param	free	The free term of the inequation, k
 		 * @return	a less-than type constraint
 		 * 
+		 * @version 1.1.0
 		 * @since	1.0.0
 		 */
 		public Constraint lessThan(double free) {
@@ -48,7 +51,7 @@ public class Constraint {
 			Constraint constraint = new Constraint();
 			
 			constraint.setCoeffs(this.coeffs);
-			constraint.setType('L');
+			constraint.setType(ConstraintType.L);
 			constraint.setFree(free);
 			
 			return constraint;
@@ -60,6 +63,7 @@ public class Constraint {
 		 * @param	free The free term of the inequation, k
 		 * @return	a greater-than type constraint
 		 * 
+		 * @version 1.1.0
 		 * @since	1.0.0
 		 */
 		public Constraint greaterThan(double free) {
@@ -67,7 +71,7 @@ public class Constraint {
 			Constraint constraint = new Constraint();
 			
 			constraint.setCoeffs(this.coeffs);
-			constraint.setType('G');
+			constraint.setType(ConstraintType.G);
 			constraint.setFree(free);
 			
 			return constraint;
@@ -79,6 +83,7 @@ public class Constraint {
 		 * @param	free The free term of the equation
 		 * @return	a equality type constraint
 		 * 
+		 * @version 1.1.0
 		 * @since	1.0.0
 		 */
 		public Constraint equalTo(double free) {
@@ -86,7 +91,7 @@ public class Constraint {
 			Constraint constraint = new Constraint();
 			
 			constraint.setCoeffs(this.coeffs);
-			constraint.setType('E');
+			constraint.setType(ConstraintType.E);
 			constraint.setFree(free);
 			
 			return constraint;
@@ -105,11 +110,11 @@ public class Constraint {
 		this.coeffs = coeffs;
 	}
 	
-	public char getType() {
+	public ConstraintType getType() {
 		return type;
 	}
 	
-	private void setType(char type) {
+	private void setType(ConstraintType type) {
 		this.type = type;
 	}
 	

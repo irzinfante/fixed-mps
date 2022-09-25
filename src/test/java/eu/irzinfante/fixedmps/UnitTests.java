@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import eu.irzinfante.fixedmps.constant.ConstraintType;
 import eu.irzinfante.fixedmps.core.Constraint;
 import eu.irzinfante.fixedmps.core.Constraint.ConstraintBuilder;
 import eu.irzinfante.fixedmps.core.Variable;
@@ -37,17 +38,17 @@ public class UnitTests {
 		Constraint constraint1 = new ConstraintBuilder(0, 1, 2).greaterThan(1);
 		assertArrayEquals(new double[] {0, 1, 2}, constraint1.getCoeffs(), 0);
 		assertEquals(1, constraint1.getFree(), 0);
-		assertEquals('G', constraint1.getType());
+		assertEquals(ConstraintType.G, constraint1.getType());
 
 		Constraint constraint2 = new ConstraintBuilder(-2, 2).lessThan(13);
 		assertArrayEquals(new double[] {-2, 2}, constraint2.getCoeffs(), 0);
 		assertEquals(13, constraint2.getFree(), 0);
-		assertEquals('L', constraint2.getType());
+		assertEquals(ConstraintType.L, constraint2.getType());
 
 		Constraint constraint3 = new ConstraintBuilder(3.14).equalTo(0);
 		assertArrayEquals(new double[] {3.14}, constraint3.getCoeffs(), 0);
 		assertEquals(0, constraint3.getFree(), 0);
-		assertEquals('E', constraint3.getType());
+		assertEquals(ConstraintType.E, constraint3.getType());
 	}
 	
 }

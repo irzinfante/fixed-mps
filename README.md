@@ -12,7 +12,7 @@ We import the ``fixed-mps`` library from Maven with
 <dependency>
     <groupId>eu.irzinfante</groupId>
     <artifactId>fixed-mps</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 

@@ -6,7 +6,7 @@ import eu.irzinfante.fixedmps.core.Constraint.ConstraintBuilder;
 
 /**
  * @author      irzinfante contacto@irzinfante.eu
- * @version     1.0.0
+ * @version     1.1.0
  * @since       1.0.0
  */
 public class Problem {
@@ -16,7 +16,7 @@ public class Problem {
 	
 	/**
 	 * @author      irzinfante contacto@irzinfante.eu
-	 * @version     1.0.0
+	 * @version     1.1.0
 	 * @since       1.0.0
 	 */
 	public static class ProblemBuilder {
@@ -45,6 +45,7 @@ public class Problem {
 		 * @param	constraint	Constraint to add to the problem
 		 * @return	ProblemBuilder with the added constraint
 		 * 
+		 * @version 1.1.0
 		 * @since	1.0.0
 		 */
 		public ProblemBuilder addConstraint(Constraint constraint) {
@@ -55,13 +56,13 @@ public class Problem {
 			}
 			
 			switch (constraint.getType()) {
-				case 'E':
+				case E:
 					rows.add(new ConstraintBuilder(coeffs).equalTo(constraint.getFree()));
 					break;
-				case 'L':
+				case L:
 					rows.add(new ConstraintBuilder(coeffs).lessThan(constraint.getFree()));
 					break;
-				case 'G':
+				case G:
 					rows.add(new ConstraintBuilder(coeffs).greaterThan(constraint.getFree()));
 					break;
 			}

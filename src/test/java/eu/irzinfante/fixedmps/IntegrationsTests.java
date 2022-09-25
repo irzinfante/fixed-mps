@@ -10,7 +10,7 @@ import eu.irzinfante.fixedmps.core.Variable.VarBuilder;
 import eu.irzinfante.fixedmps.util.MPSUtil;
 import eu.irzinfante.fixedmps.core.Constraint.ConstraintBuilder;
 
-public class MPSTest {
+public class IntegrationsTests {
 	
 	@Test
 	public void defaultTest() {

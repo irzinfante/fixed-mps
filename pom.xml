@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>eu.irzinfante</groupId>
 	<artifactId>fixed-mps</artifactId>
-	<version>1.1.0</version>
+	<version>1.1.1</version>
 	<packaging>jar</packaging>
 	
 	<properties>
@@ -11,7 +11,7 @@
 	</properties>
 	
 	<name>fixed-mps</name>
-	<description>Easily generate fixed MPS files for LP solver</description>
+	<description>Library to easily generate fixed MPS files for LP solver</description>
 	<url>https://github.com/irzinfante/fixed-mps</url>
 	<inceptionYear>2020</inceptionYear>
 	
@@ -19,7 +19,7 @@
 		<developer>
 			<id>irzinfante</id>
 			<name>Iker Ruiz de Infante Gonzalez</name>
-			<email>contacto@irzinfante.eu</email>
+			<email>iker@irzinfante.eu</email>
 			<timezone>+1</timezone>
 			<roles>
 				<role>Software Developer</role>

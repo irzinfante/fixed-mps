@@ -11,9 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
     - name: Set up Maven
-      uses: s4u/setup-maven-action@1
+      uses: s4u/setup-maven-action@v1.14.0
       with:
         java-distribution: 'temurin'
         java-version: 21

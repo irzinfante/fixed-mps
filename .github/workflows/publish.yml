@@ -4,14 +4,14 @@ on:
     types: [created]
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - name: Set up Maven Central Repository
         uses: actions/setup-java@v4
         with:
           java-version: '21'
-          distribution: 'temurin'
+          distribution: 'adopt'
           server-id: central
           server-username: MAVEN_USERNAME
           server-password: MAVEN_PASSWORD

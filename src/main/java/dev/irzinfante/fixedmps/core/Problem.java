@@ -1,29 +1,30 @@
 /**
  * Library to easily generate fixed MPS files for LP solver
- * Copyright (C) 2020-2023 Iker Ruiz de Infante Gonzalez <iker@irzinfante.eu>
+ * Copyright (C) 2020-2024 Iker Ruiz de Infante Gonzalez <iker@irzinfante.dev>
  *
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Affero General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package eu.irzinfante.fixedmps.core;
+package dev.irzinfante.fixedmps.core;
 
 import java.util.ArrayList;
 import java.util.List;
-import eu.irzinfante.fixedmps.core.Constraint.ConstraintBuilder;
+
+import dev.irzinfante.fixedmps.core.Constraint.ConstraintBuilder;
 
 /**
- * @author      irzinfante iker@irzinfante.eu
+ * @author      irzinfante iker@irzinfante.dev
  * @since       1.0.0
  */
 public class Problem {
@@ -32,7 +33,7 @@ public class Problem {
 	private Constraint rows[];
 	
 	/**
-	 * @author      irzinfante iker@irzinfante.eu
+	 * @author      irzinfante iker@irzinfante.dev
 	 * @since       1.0.0
 	 */
 	public static class ProblemBuilder {

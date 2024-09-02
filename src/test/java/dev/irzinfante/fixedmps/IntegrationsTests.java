@@ -1,32 +1,32 @@
 /**
  * Library to easily generate fixed MPS files for LP solver
- * Copyright (C) 2020-2023 Iker Ruiz de Infante Gonzalez <iker@irzinfante.eu>
+ * Copyright (C) 2020-2024 Iker Ruiz de Infante Gonzalez <iker@irzinfante.dev>
  *
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Affero General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
+ * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package eu.irzinfante.fixedmps;
+package dev.irzinfante.fixedmps;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import eu.irzinfante.fixedmps.core.Problem;
-import eu.irzinfante.fixedmps.core.Problem.ProblemBuilder;
-import eu.irzinfante.fixedmps.core.Variable.VarBuilder;
-import eu.irzinfante.fixedmps.util.MPSUtil;
-import eu.irzinfante.fixedmps.core.Constraint.ConstraintBuilder;
+import dev.irzinfante.fixedmps.core.Problem;
+import dev.irzinfante.fixedmps.core.Constraint.ConstraintBuilder;
+import dev.irzinfante.fixedmps.core.Problem.ProblemBuilder;
+import dev.irzinfante.fixedmps.core.Variable.VarBuilder;
+import dev.irzinfante.fixedmps.util.MPSUtil;
 
 public class IntegrationsTests {
 	

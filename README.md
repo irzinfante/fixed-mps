@@ -40,7 +40,7 @@ Then we add the constraints for the problem row by row, giving the coeffient for
 
 Now, to get the MPS file (as a String) from the problem we do this:
 ```java
-import eu.irzinfante.fixedmps.util.MPSUtil;
+import dev.irzinfante.fixedmps.util.MPSUtil;
 
 MPSUtil.obtainMPSfile(lp)
 ```

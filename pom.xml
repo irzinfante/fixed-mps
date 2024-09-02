@@ -20,7 +20,6 @@
 			<id>irzinfante</id>
 			<name>Iker Ruiz de Infante Gonzalez</name>
 			<email>iker@irzinfante.dev</email>
-			<timezone>+1</timezone>
 		</developer>
 	</developers>
 	
@@ -45,7 +44,7 @@
 			<plugin>
 	        	<groupId>org.apache.maven.plugins</groupId>
 	        	<artifactId>maven-surefire-plugin</artifactId>
-	        	<version>3.0.0</version>
+	        	<version>3.5.0</version>
 	        </plugin>
 			<plugin>
 				<artifactId>maven-deploy-plugin</artifactId>
@@ -65,8 +64,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.13.0</version>
 				<configuration>
-					<source>1.21</source>
-					<target>1.21</target>
+					<source>21</source>
+					<target>21</target>
 				</configuration>
 			</plugin>
 			<plugin>
